@@ -7,7 +7,7 @@ This is a little app that allows you to general multiple sql insert queries with
 
 2. Open your terminal and go to the location of the .jar file
 
-3. `java -jar ${name of jar file}.jar`
+3. run the command `java -jar ${name of jar file}.jar` to run the program
 
 4. Write the name of the table
 
