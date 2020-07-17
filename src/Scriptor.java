@@ -163,6 +163,13 @@ public class Scriptor {
         return values.toString();
     }
 
+    private String getRandomAddress(){
+        StringBuilder value = new StringBuilder();
+        value.append(randomNumberGenerator.nextInt(201));
+        value.append(" " + getRandomWord());
+        return value.toString();
+    }
+
     private String getRandomTypeById(int id) {
         switch (id) {
             case 0:
@@ -185,6 +192,8 @@ public class Scriptor {
                 return getRandomISBN();
             case 9:
                 return getRandom5NumericalId();
+            case 10:
+                return getRandomAddress();
             default:
                 return "null";
         }
