@@ -25,9 +25,12 @@ public class ShowRunner {
 
             if (input.equals("y") || input.equals("Y")) {
                 getNameOfTable();
+            }else if (input.equals("n")|| input.equals("N")){
+                System.exit(0);
             }
 
-        } while (!input.equals("-exit-"));
+        } while (!input.contains("-exit-"));
+        System.exit(0);
     }
 
     private void getNameOfTable() throws IOException {
