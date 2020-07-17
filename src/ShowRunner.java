@@ -103,7 +103,8 @@ public class ShowRunner {
         System.out.println("6 - random email address");
         System.out.println("7 - random website");
         System.out.println("8 - random isbn");
-        System.out.println("9 - null\n");
+        System.out.println("9 - random 5 numerical digit id");
+        System.out.println("10 - null\n");
     }
 
     private void getNumberOfScriptsToBeGenerated() throws IOException {

@@ -99,6 +99,13 @@ public class Scriptor {
         return "Random Name: " + getRandomName() + "\n" + "Random word: " + getRandomWord() + "\nRandom Date: " + getRandomDate() + "\nRandom Email:" + getRandomEmailAddress() + "\nRandom Postal Code:" + getRandomPostalCode() + "\nTelephone number: " + getRandomTelephoneNumber() + "\nWebsite: " + getRandomWebSite() + "\nRandom city: " + getRandomCity();
     }
 
+    public String getRandom5NumericalId(){
+        StringBuilder s = new StringBuilder();
+        for (int i = 0; i <5; i++){
+            s.append(randomNumberGenerator.nextInt(10));
+        }
+        return s.toString();
+    }
 
     private String getRandomISBN() {
         StringBuilder isbn = new StringBuilder();
@@ -176,6 +183,8 @@ public class Scriptor {
                 return getRandomWebSite();
             case 8:
                 return getRandomISBN();
+            case 9:
+                return getRandom5NumericalId();
             default:
                 return "null";
         }
