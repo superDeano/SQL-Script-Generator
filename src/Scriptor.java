@@ -99,9 +99,9 @@ public class Scriptor {
         return "Random Name: " + getRandomName() + "\n" + "Random word: " + getRandomWord() + "\nRandom Date: " + getRandomDate() + "\nRandom Email:" + getRandomEmailAddress() + "\nRandom Postal Code:" + getRandomPostalCode() + "\nTelephone number: " + getRandomTelephoneNumber() + "\nWebsite: " + getRandomWebSite() + "\nRandom city: " + getRandomCity();
     }
 
-    public String getRandom5NumericalId(){
+    public String getRandom5NumericalId() {
         StringBuilder s = new StringBuilder();
-        for (int i = 0; i <5; i++){
+        for (int i = 0; i < 5; i++) {
             s.append(randomNumberGenerator.nextInt(10));
         }
         return s.toString();
@@ -121,15 +121,14 @@ public class Scriptor {
     }
 
 
-
     public void printScripts() {
         for (int scriptNumber = 1; scriptNumber <= numberOfScripts; scriptNumber++) {
-           System.out.println(getInsertStatement());
+            System.out.println(getInsertStatement());
         }
     }
 
     private String getInsertStatement() {
-        return  "INSERT INTO " + tableName + " " + getColumnNames() + " VALUES " + getValues();
+        return "INSERT INTO " + tableName + " " + getColumnNames() + " VALUES " + getValues();
     }
 
     private String getColumnNames() {
@@ -148,7 +147,7 @@ public class Scriptor {
         return names.toString();
     }
 
-    private String getValues(){
+    private String getValues() {
         StringBuilder values = new StringBuilder("(");
         int theEnd = columnDataTypes.length - 1;
 
@@ -163,7 +162,11 @@ public class Scriptor {
         return values.toString();
     }
 
-    private String getRandomAddress(){
+    private double getRandomPrice() {
+        return Math.round(randomNumberGenerator.nextDouble() * 50);
+    }
+
+    private String getRandomAddress() {
         StringBuilder value = new StringBuilder();
         value.append(randomNumberGenerator.nextInt(201));
         value.append(" " + getRandomWord());
@@ -173,29 +176,31 @@ public class Scriptor {
     private String getRandomTypeById(int id) {
         switch (id) {
             case 0:
-                return getRandomWord();
+                return "'" + getRandomWord() + "'";
             case 1:
-                return getRandomName();
+                return "'" + getRandomName() + "'";
             case 2:
-                return getRandomCity();
+                return "'" + getRandomCity() + "'";
             case 3:
-                return getRandomDate();
+                return "'" + getRandomDate() + "'";
             case 4:
-                return getRandomPostalCode();
+                return "'" + getRandomPostalCode() + "'";
             case 5:
-                return getRandomTelephoneNumber();
+                return "'" + getRandomTelephoneNumber() + "'";
             case 6:
-                return getRandomEmailAddress();
+                return "'" + getRandomEmailAddress() + "'";
             case 7:
-                return getRandomWebSite();
+                return "'" + getRandomWebSite() + "'";
             case 8:
-                return getRandomISBN();
+                return "'" + getRandomISBN() + "'";
             case 9:
                 return getRandom5NumericalId();
             case 10:
-                return getRandomAddress();
+                return "'" + getRandomAddress() + "'";
+            case 11:
+                return String.valueOf(getRandomPrice());
             default:
-                return "null";
+                return "'" + "null" + "'";
         }
     }
 }
